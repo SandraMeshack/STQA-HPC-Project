@@ -1,0 +1,43 @@
+#            This is an example of configuration file for the simulator         #
+#                                                                               #
+#                                                                               #
+# Permissions for running a certain type job is reprensed by five 0 and 1       #
+# A 1 means that the user can run a certain type of job                         #
+# A 0 means that the user can not run a certain type of job                     #
+# Different types of jobs in order are : small, medium, large, huge, gpu        #
+# For example a user having permissions 0 1 0 0 can only run medium jobs        #
+#                                                                               #
+# The first section is for defining research groups                             #
+# Every research group should be added by respecting the folowing format        #
+# Where each grant will be attributed to one of the researcher of the group     #
+CommonBudget 6000
+Permissions 0 1 1 1 0
+AverageTimeBetweenTwoJobs 12
+Grants 200 700
+NumberOfResearchers 3
+
+
+CommonBudget 4000
+Permissions 0 1 1 0 0
+AverageTimeBetweenTwoJobs 12
+Grants
+NumberOfResearchers 2
+
+# The following line corresponds to the beginning of the Curriculums definitions #
+----
+# The cumulative and instantaneous caps apply to each student of the curriculum  #
+# Each curriculum should be described respecting the following format            #
+CumulativeCap 1000
+InstantaneousCap 30
+Permissions 1 1 1 0 1
+AverageTimeBetweenTwoJobs 18
+NumberOfStudents 5
+
+CumulativeCap 1000
+InstantaneousCap 20
+Permissions 1 1 0 0 0
+AverageTimeBetweenTwoJobs 18
+NumberOfStudents 5
+
+# Next line should be present to avoid unexpected end of file when parsing      #
+----
